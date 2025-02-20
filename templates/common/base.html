@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}JCRM{% endblock %}</title>
+    
+    <!-- Import Tailwind CSS -->
+    {% include 'dependencies/css.html' %}
+  
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    {% include 'common/navbar.html' %}
+
+    <div class="container mx-auto mt-10">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% include 'common/footer.html' %}
+
+    <!-- Import JavaScript -->
+    {% include 'dependencies/js.html' %}
+</body>
+</html>

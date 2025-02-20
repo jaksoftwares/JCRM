@@ -1,0 +1,17 @@
+<h2>Checkout</h2>
+<p>Total: Ksh {{ total_price }}</p>
+<button id="payButton">Pay Now</button>
+
+<script>
+document.getElementById('payButton').addEventListener('click', function() {
+    fetch("{% url 'process_payment' %}", { method: "POST", headers: { "X-CSRFToken": "{{ csrf_token }}" } })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            window.location.href = data.redirect_url;
+        } else {
+            alert("Payment failed.");
+        }
+    });
+});
+</script>

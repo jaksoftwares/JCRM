@@ -1,0 +1,16 @@
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <label>Payment Method:</label>
+    <select name="payment_method">
+        <option value="stripe">Stripe</option>
+        <option value="paypal">PayPal</option>
+    </select>
+
+    <div id="stripe-card-element">
+        <input type="text" name="stripeToken" placeholder="Stripe Card Token" required>
+    </div>
+
+    <button type="submit">Donate</button>
+</form>

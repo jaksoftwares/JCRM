@@ -1,0 +1,30 @@
+<h1>{{ product.title }}</h1>
+<p>By {{ product.author }}</p>
+<img src="{{ product.cover_image.url }}" alt="{{ product.title }}">
+<p>{{ product.description }}</p>
+<p>Price: Ksh {{ product.price }}</p>
+
+{% if has_access %}
+    <h3>Download Full Version</h3>
+    {% if product.product_type == "ebook" %}
+        <a href="{{ product.full_file.url }}" download>Download eBook</a>
+    {% elif product.product_type == "audiobook" %}
+        <a href="{{ product.full_audio.url }}">Listen Now</a>
+    {% endif %}
+{% else %}
+    <h3>Preview</h3>
+    {% if product.preview_available %}
+        {% if product.product_type == "ebook" %}
+            <iframe src="{{ product.preview_file.url }}" width="100%" height="400px"></iframe>
+        {% elif product.product_type == "audiobook" %}
+            <audio controls>
+                <source src="{{ product.preview_audio.url }}" type="audio/mpeg">
+                Your browser does not support audio playback.
+            </audio>
+        {% endif %}
+    {% else %}
+        <p>No preview available.</p>
+    {% endif %}
+    
+    <a href="#">Buy Now (Payment Integration)</a>
+{% endif %}

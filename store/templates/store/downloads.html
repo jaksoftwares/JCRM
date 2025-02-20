@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Purchased Downloads</h2>
+
+{% if purchases %}
+<ul>
+    {% for purchase in purchases %}
+    <li>
+        <strong>Order #{{ purchase.order.id }}</strong> - {{ purchase.order.product.name }}  
+        <a href="{{ purchase.order.product.file.url }}" download>📥 Download</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>You have no downloadable purchases yet.</p>
+{% endif %}
+
+{% endblock %}
