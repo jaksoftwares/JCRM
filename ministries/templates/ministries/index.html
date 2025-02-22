@@ -1,1 +1,41 @@
-< ministries Page Template -->
+{% extends 'common/base.html' %}
+
+{% block title %}JCRM:Ministries{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-6">MINISTRIES SERVE, GROW, AND CONNECT</h1>
+        <div class="relative">
+            <img src="{% static 'images/worship_service.jpg' %}" alt="Worship Service" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 p-4">
+                <p class="text-lg">
+                    Ministries are the heartbeat of JCRM. They are more than just programs—they are opportunities to live out your faith, build meaningful relationships, and make a lasting impact in our church and community. Through our ministries, we grow together in Christ, serve those in need, and share the love of Jesus with the world. No matter where you are in your spiritual journey, there's a ministry that's right for you.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-10">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Worship & Creative Arts Ministries -->
+            <div class="border border-gray-200 p-6 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-semibold mb-4">Worship & Creative Arts Ministries</h2>
+                <p class="mb-4">The Worship Team leads the congregation in heartfelt praise and worship during services. The Media & Production Team supports our services through live streams, photography, and video production, and the Drama & Creative Arts Ministry allows members to express their faith through artistic performances.</p>
+                <img src="{% static 'images/worship_team.jpg' %}" alt="Worship Team" class="w-full h-48 object-cover mb-4 rounded-lg">
+                <a href="#" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">LEARN MORE</a>
+            </div>
+            
+            <!-- Discipleship & Christian Growth Ministries -->
+            <div class="border border-gray-200 p-6 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-semibold mb-4">Discipleship & Christian Growth Ministries</h2>
+                <p class="mb-4">Bible Study Groups offer small group fellowships for in-depth Bible study and prayer, while the Prayer Ministry brings together intercessors to pray for the needs of the church and community. The New Believers Class is designed to guide those new to the faith in their spiritual journey.</p>
+                <img src="{% static 'images/bible_study.jpg' %}" alt="Bible Study" class="w-full h-48 object-cover mb-4 rounded-lg">
+                <a href="#" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">LEARN MORE</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

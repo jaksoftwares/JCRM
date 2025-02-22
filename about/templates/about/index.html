@@ -1,1 +1,115 @@
-< about Page Template -->
+{% extends 'common/base.html' %}
+
+{% block title %}About Us | JCRM{% endblock %}
+
+{% load static%}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="relative w-full h-96">
+        <img src="{% static 'images/about_hero.jpg' %}" alt="About Hero Image" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h1 class="text-white text-4xl md:text-6xl font-bold">IGNITING FAITH, TRANSFORMING LIVES</h1>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold">ABOUT JCRM</h2>
+            <p class="text-lg mt-4">JCRM (Jesus Christ Revival Movement) was born on August 15, 2015, and started in a two-bedroom apartment in the city of Lagos, Nigeria. It was founded by Pastor David and Pastor Mary with a vision to ignite faith and transform lives through the power of the Holy Spirit.</p>
+            <p class="text-lg mt-4">Over the years, JCRM has grown into a vibrant community of believers who are passionate about experiencing God's power, embracing His love, and walking in His grace. Our mission is to reach out to the lost, the broken, and the hurting with the message of hope and restoration.</p>
+            <p class="text-lg mt-4">We believe that through the power of the Holy Spirit, lives can be transformed, and destinies can be fulfilled. Join us on this journey of faith as we seek to know God more and make Him known to the world.</p>
+        </div>
+        <div class="flex justify-center">
+            <img src="{% static 'images/about_us.jpg' %}" alt="About Us Image" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="bg-gray-200 py-16">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold">OUR MISSION & VISION</h2>
+            <p class="text-lg mt-4">At JCRM, our mission is to ignite a deep relationship with Jesus Christ, empower believers to live out their faith, and transform lives through the power of the Holy Spirit. Our vision is to see a world where every person experiences the love of God, walks in His grace, and fulfills their God-given purpose.</p>
+            <p class="text-lg mt-4">We are committed to reaching out to the lost, the broken, and the hurting with the message of hope and restoration. Through our various ministries, we aim to create an environment where people can encounter God, grow in their faith, and be equipped to impact their world for Christ.</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-16">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold">OUR STORY</h2>
+            <p class="text-lg mt-4">[Add your story content here]</p>
+        </div>
+    </section>
+
+    <!-- Our Ministries Section -->
+    <section class="bg-gray-200 py-16">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold">OUR MINISTRIES</h2>
+        </div>
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full md:w-1/4 p-4">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Children's Ministry</h3>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Youth Ministry</h3>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Worship & Creative Arts Ministry</h3>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">Evangelism & Missions</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Get Involved Section -->
+        <section class="container mx-auto p-6">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-center text-3xl font-bold mb-6">
+                    <span class="text-blue-500">GET</span> <span class="text-red-500">INVOLVED</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">
+                            🚀
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Visit us this Sunday</h3>
+                        <p class="text-gray-600">Come and worship with us</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">
+                            🤝
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Become a member</h3>
+                        <p class="text-gray-600">Grow in faith and community</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">
+                            🎁
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Join a ministry</h3>
+                        <p class="text-gray-600">Use your gifts for God’s glory</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">
+                            ❤️✝️
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Give & Support</h3>
+                        <p class="text-gray-600">Partner with us in advancing God’s kingdom.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock %}
+        

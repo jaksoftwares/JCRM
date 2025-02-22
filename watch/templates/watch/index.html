@@ -1,1 +1,85 @@
-< watch Page Template -->
+{% extends 'common/base.html' %}
+
+{%block title%} Sermons {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <div class="text-center py-8">
+        <h1 class="text-4xl font-bold">SERMONS AT JCRM</h1>
+        <p class="text-xl text-blue-500">Grow in the Word</p>
+        <p class="mt-4 text-gray-700">
+            Deepen your faith with powerful sermons, inspiring devotionals, and uplifting worship content—all accessible anytime, anywhere. Whether you're looking to watch an impactful sermon, read an insightful devotional, or listen to spirit-filled worship, JCRM has you covered.
+        </p>
+    </div>
+    <div class="flex justify-center">
+        <img src="path/to/image.jpg" alt="Sermon Image" class="rounded-lg shadow-lg">
+    </div>
+    <div class="mt-8">
+        <div class="flex justify-center space-x-8">
+            <a href="#" class="text-lg font-semibold text-gray-800 border-b-2 border-blue-500">Watch</a>
+            <a href="#" class="text-lg font-semibold text-gray-800">Listen</a>
+            <a href="#" class="text-lg font-semibold text-gray-800">Read</a>
+        </div>
+        <div class="mt-4 flex justify-center">
+            <div class="relative w-full max-w-lg">
+                <input type="text" class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search">
+                <button class="absolute right-2 top-2 text-gray-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 16.65z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image1.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image2.jpg" alt="Reaching the Peak" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image3.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image4.jpg" alt="Reaching the Peak" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image5.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image5.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image5.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image5.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-lg">
+                <img src="path/to/image5.jpg" alt="Building Strong Families" class="rounded-lg">
+                <h2 class="mt-4 text-xl font-bold">The Beatitudes</h2>
+                <p class="text-gray-600">2.10.2024 | Matthew 5:3–10</p>
+            </div>
+            <!-- Add more sermon cards as needed -->
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,153 +1,62 @@
 import os
 
-# Define base templates directory
-BASE_DIR = os.path.join(os.getcwd(), "templates")
+# Define project and app names
+project_name = "jcrm"
+apps = [
+    "home", "about", "watch", "read", "listen", "ministries", "events", "store", "blog", "contact", "account", "requests", "donations"
+]
 
-# Define apps and their template files
-TEMPLATES_STRUCTURE = {
-    "store": [
-        "index.html",
-        "ebook_detail.html",
-        "audiobook_detail.html",
-        "checkout.html",
-        "order_success.html"
-    ],
-    "sermons": [
-        "index.html",
-        "sermon_detail.html",
-        "sermon_archive.html"
-    ],
-    "blog": [
-        "index.html",
-        "blog_detail.html",
-        "blog_category.html",
-        "blog_author.html"
-    ],
-    "donations": [
-        "index.html",
-        "give.html",
-        "thank_you.html",
-        "donation_history.html"
-    ],
-    "users": [
-        "login.html",
-        "logout.html",
-        "register.html",
-        "profile.html",
-        "dashboard.html"
-    ],
-    "common": [
-        "base.html",
-        "navbar.html",
-        "footer.html",
-        "home.html"
-    ],
-    "home": [
-        "index.html",
-        "about.html",
-        "contact.html"
-    ],
-    "dependencies": [
-        "css.html",
-        "js.html",
-    ]
-}
+def create_directory(path):
+    """Create directory if it doesn't exist."""
+    if not os.path.exists(path):
+        os.makedirs(path)
 
-# Default content for files
-BASE_HTML_CONTENT = """{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}JCRM{% endblock %}</title>
+def create_file(path, content=""):
+    """Create file with content if it doesn't exist."""
+    if not os.path.exists(path):
+        with open(path, "w") as f:
+            f.write(content)
+
+# Set up global templates
+global_templates_dir = os.path.join(project_name, "templates")
+create_directory(global_templates_dir)
+global_template_files = ["base.html", "navbar.html", "footer.html"]
+for file in global_template_files:
+    create_file(os.path.join(global_templates_dir, file), f"<!-- {file} global template -->")
+
+# Iterate over each app to create directories, files, and basic structure
+for app in apps:
+    app_dir = os.path.join(project_name, app)
+    templates_dir = os.path.join(app_dir, "templates", app)
     
-    <!-- Import Tailwind CSS -->
-    {% include 'dependencies/css.html' %}
-</head>
-<body class="bg-gray-100 text-gray-900">
+    # Create necessary directories
+    create_directory(app_dir)
+    create_directory(templates_dir)
+    
+    # Create empty __init__.py to make it a package
+    create_file(os.path.join(app_dir, "__init__.py"))
+    
+    # Create urls.py with basic structure
+    urls_content = f"""
+from django.urls import path
+from . import views
 
-    {% include 'common/navbar.html' %}
-
-    <div class="container mx-auto mt-10">
-        {% block content %}{% endblock %}
-    </div>
-
-    {% include 'common/footer.html' %}
-
-    <!-- Import JavaScript -->
-    {% include 'dependencies/js.html' %}
-</body>
-</html>
+urlpatterns = [
+    path('', views.index, name='{app}_index'),
+]
 """
+    create_file(os.path.join(app_dir, "urls.py"), urls_content.strip())
+    
+    # Create views.py with a basic function
+    views_content = f"""
+from django.shortcuts import render
 
-NAVBAR_HTML_CONTENT = """{% load static %}
-<nav class="bg-red-600 text-white p-4">
-    <div class="container mx-auto flex justify-between">
-        <a href="/" class="font-bold text-lg">JCRM</a>
-        <ul class="flex space-x-4">
-            <li><a href="{% url 'home:index' %}" class="hover:text-gray-300">Home</a></li>
-            <li><a href="{% url 'sermons:index' %}" class="hover:text-gray-300">Sermons</a></li>
-            <li><a href="{% url 'store:index' %}" class="hover:text-gray-300">Store</a></li>
-            <li><a href="{% url 'donations:index' %}" class="hover:text-gray-300">Give</a></li>
-            <li><a href="{% url 'blog:index' %}" class="hover:text-gray-300">Blog</a></li>
-        </ul>
-    </div>
-</nav>
+def index(request):
+    return render(request, '{app}/index.html')
 """
+    create_file(os.path.join(app_dir, "views.py"), views_content.strip())
+    
+    # Create empty template file for the app
+    create_file(os.path.join(templates_dir, "index.html"), f"<!-- {app} Page Template -->")
 
-FOOTER_HTML_CONTENT = """{% load static %}
-<footer class="bg-black text-white p-6 mt-10 text-center">
-    <p>&copy; 2025 JCRM Church. All rights reserved.</p>
-</footer>
-"""
-
-CSS_HTML_CONTENT = """{% load static %}
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
-"""
-
-JS_HTML_CONTENT = """{% load static %}
-<script src="{% static 'js/index.js' %}" defer></script>
-"""
-
-DEFAULT_PAGE_CONTENT = """{% extends 'common/base.html' %}
-
-{% block title %}Page Title{% endblock %}
-
-{% block content %}
-<div class="text-center py-10">
-    <h1 class="text-3xl font-bold">Welcome to {page_name}</h1>
-</div>
-{% endblock %}
-"""
-
-def create_templates():
-    """Creates folders and template files for Django project."""
-    for app, files in TEMPLATES_STRUCTURE.items():
-        app_dir = os.path.join(BASE_DIR, app)
-        os.makedirs(app_dir, exist_ok=True)
-
-        for file in files:
-            file_path = os.path.join(app_dir, file)
-            if not os.path.exists(file_path):
-                with open(file_path, "w") as f:
-                    if file == "base.html":
-                        f.write(BASE_HTML_CONTENT)
-                    elif file == "navbar.html":
-                        f.write(NAVBAR_HTML_CONTENT)
-                    elif file == "footer.html":
-                        f.write(FOOTER_HTML_CONTENT)
-                    elif file == "css.html":
-                        f.write(CSS_HTML_CONTENT)
-                    elif file == "js.html":
-                        f.write(JS_HTML_CONTENT)
-                    else:
-                        f.write(DEFAULT_PAGE_CONTENT.replace("{page_name}", file.replace('.html', '').title()))
-
-                print(f"✅ Created: {file_path}")
-            else:
-                print(f"⚡ Exists: {file_path}")
-
-if __name__ == "__main__":
-    create_templates()
-    print("\n🎉 Template structure created successfully!")
+print("✅ All apps, URLs, views, and templates have been set up successfully!")

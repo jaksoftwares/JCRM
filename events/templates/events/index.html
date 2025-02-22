@@ -1,1 +1,47 @@
-< events Page Template -->
+{% extends 'common/base.html' %}
+
+{% block title %}Events{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6">Events</h1>
+
+    <div class="mb-6">
+        <ul class="flex border-b">
+            <li class="-mb-px mr-1">
+                <a class="bg-white inline-block py-2 px-4 text-blue-500 font-semibold" href="#recent-events">Recent Events</a>
+            </li>
+            <li class="mr-1">
+                <a class="bg-white inline-block py-2 px-4 text-gray-500 hover:text-blue-500" href="#upcoming-events">Upcoming Events</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="recent-events" class="space-y-8">
+        <div class="border border-gray-200 p-6 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold mb-2">Healing & Deliverance Crusade</h2>
+            <p class="text-gray-500 mb-2">January 22</p>
+            <p class="mb-4">Our recent Healing & Deliverance Crusade was a night of breakthroughs! Many experienced the power of God through healing, deliverance, and prophetic ministration. Testimonies of restoration and renewed faith filled the atmosphere as we witnessed God move mightily.</p>
+            <p class="text-gray-500">Location: JCRM</p>
+        </div>
+        
+        <div class="border border-gray-200 p-6 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold mb-2">Christmas Worship Celebration</h2>
+            <p class="text-gray-500 mb-2">December 25</p>
+            <p class="mb-4">The Christmas Worship Celebration was an unforgettable moment of joy, praise, and gratitude. Families and friends gathered to celebrate the birth of Christ through powerful worship, scripture readings, and acts of love within the community.</p>
+            <p class="text-gray-500">Location: JCRM</p>
+        </div>
+        
+        <div class="border border-gray-200 p-6 rounded-lg shadow-sm">
+            <h2 class="text-2xl font-semibold mb-2">21 Days of Prayer & Fasting</h2>
+            <p class="text-gray-500 mb-2">January 22 (Ongoing)</p>
+            <p class="mb-4">Our 21 Days of Prayer & Fasting brought the congregation closer to God as we sought His will for the new season. The testimonies of spiritual renewal, answered prayers, and divine direction have been truly inspiring.</p>
+            <p class="text-gray-500">Location: JCRM</p>
+            <p class="text-gray-500">Duration: January 22 - February 15</p>
+            <p class="text-gray-500">Time: 6:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
