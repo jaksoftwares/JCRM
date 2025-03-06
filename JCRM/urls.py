@@ -20,5 +20,8 @@ urlpatterns = [
     path('account/', include('account.urls', namespace='account')),
     path('prayers/', include('prayers.urls', namespace='prayers')),
     path('donations/', include('donations.urls', namespace='donations')),
-     path('dashboard/', include('dashboard.urls', namespace='dashboard')),
+    path('dashboard/', include('dashboard.urls', namespace='dashboard')),
+    path('resources/', include('resources.urls', namespace='resources')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

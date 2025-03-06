@@ -5,111 +5,181 @@
 {% load static%}
 
 {% block content %}
-    <!-- Hero Section -->
-    <section class="relative w-full h-96">
-        <img src="{% static 'images/about_hero.jpg' %}" alt="About Hero Image" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-            <h1 class="text-white text-4xl md:text-6xl font-bold">IGNITING FAITH, TRANSFORMING LIVES</h1>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="py-16">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">ABOUT JCRM</h2>
-            <p class="text-lg mt-4">JCRM (Jesus Christ Revival Movement) was born on August 15, 2015, and started in a two-bedroom apartment in the city of Lagos, Nigeria. It was founded by Pastor David and Pastor Mary with a vision to ignite faith and transform lives through the power of the Holy Spirit.</p>
-            <p class="text-lg mt-4">Over the years, JCRM has grown into a vibrant community of believers who are passionate about experiencing God's power, embracing His love, and walking in His grace. Our mission is to reach out to the lost, the broken, and the hurting with the message of hope and restoration.</p>
-            <p class="text-lg mt-4">We believe that through the power of the Holy Spirit, lives can be transformed, and destinies can be fulfilled. Join us on this journey of faith as we seek to know God more and make Him known to the world.</p>
-        </div>
-        <div class="flex justify-center">
-            <img src="{% static 'images/about_us.jpg' %}" alt="About Us Image" class="rounded-lg shadow-lg">
-        </div>
-    </section>
+<section class="relative h-screen flex items-center justify-center text-center text-white">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/static/images/about.png');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
 
-    <!-- Mission & Vision Section -->
-    <section class="bg-gray-200 py-16">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">OUR MISSION & VISION</h2>
-            <p class="text-lg mt-4">At JCRM, our mission is to ignite a deep relationship with Jesus Christ, empower believers to live out their faith, and transform lives through the power of the Holy Spirit. Our vision is to see a world where every person experiences the love of God, walks in His grace, and fulfills their God-given purpose.</p>
-            <p class="text-lg mt-4">We are committed to reaching out to the lost, the broken, and the hurting with the message of hope and restoration. Through our various ministries, we aim to create an environment where people can encounter God, grow in their faith, and be equipped to impact their world for Christ.</p>
-        </div>
-    </section>
+    <!-- Centered Text Content -->
+    <div class="relative z-10 px-6">
+        <h1 class="text-5xl md:text-6xl font-bold uppercase">Igniting Faith, Transforming Lives</h1>
+        <p class="text-xl md:text-2xl mt-2">Reviving Souls, Transforming Nations</p>
+    </div>
+</section>
 
-    <!-- Our Story Section -->
-    <section class="py-16">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">OUR STORY</h2>
-            <p class="text-lg mt-4">[Add your story content here]</p>
-        </div>
-    </section>
 
-    <!-- Our Ministries Section -->
-    <section class="bg-gray-200 py-16">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">OUR MINISTRIES</h2>
+<section class="container mx-auto px-6 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row items-center md:items-stretch">
+        <!-- Image Section (Adjusted to match text height) -->
+        <div class="w-full md:w-1/2 flex justify-center md:justify-start">
+            <img src="/static/images/ps.jpg" alt="JCRM Founders" 
+                class="w-full h-full object-cover rounded-lg shadow-lg">
         </div>
-        <div class="flex flex-wrap justify-center">
-            <div class="w-full md:w-1/4 p-4">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-bold mb-2">Children's Ministry</h3>
-                </div>
-            </div>
-            <div class="w-full md:w-1/4 p-4">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-bold mb-2">Youth Ministry</h3>
-                </div>
-            </div>
-            <div class="w-full md:w-1/4 p-4">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-bold mb-2">Worship & Creative Arts Ministry</h3>
-                </div>
-            </div>
-            <div class="w-full md:w-1/4 p-4">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-bold mb-2">Evangelism & Missions</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-        <!-- Get Involved Section -->
-        <section class="container mx-auto p-6">
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <h2 class="text-center text-3xl font-bold mb-6">
-                    <span class="text-blue-500">GET</span> <span class="text-red-500">INVOLVED</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">
-                            🚀
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Visit us this Sunday</h3>
-                        <p class="text-gray-600">Come and worship with us</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">
-                            🤝
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Become a member</h3>
-                        <p class="text-gray-600">Grow in faith and community</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">
-                            🎁
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Join a ministry</h3>
-                        <p class="text-gray-600">Use your gifts for God’s glory</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">
-                            ❤️✝️
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Give & Support</h3>
-                        <p class="text-gray-600">Partner with us in advancing God’s kingdom.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        {% endblock %}
+        <!-- Text Content -->
+        <div class="w-full md:w-1/2 md:pl-6 flex flex-col justify-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-black">ABOUT JCRM</h2>
+            <p class="mt-4 text-gray-700 leading-relaxed">
+                At JCRM, our foundation is Jesus Christ, our message is His Gospel, and our mission is to see souls saved 
+                and discipled in His name. From humble beginnings to a thriving global ministry, we have remained steadfast 
+                in our calling to proclaim the truth of God’s Word and extend His grace to all. Founded in <strong>[Year]</strong>, 
+                our ministry was built on faith, prayer, and obedience to God’s calling. Today, we serve <strong>[Number]</strong> 
+                of people weekly, reaching lives with the truth of Jesus. With <strong>[Number]</strong> ministries and outreach 
+                programs, we bring hope through Christ-centered service. Located in <strong>[City, Country]</strong>, 
+                JCRM stands as a beacon of God’s love and revival.
+            </p>
+            <p class="mt-4">
+                <a href="#" class="text-blue-600 hover:underline font-semibold">Join Us This Sunday →</a> 
+                <span class="text-red-600">Come encounter the presence of God!</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="relative">
+    <img src="{% static 'images/about.png' %}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover">
+    <div class="relative container mx-auto py-10 px-5 bg-opacity-70 bg-gray-900">
+      <h2 class="text-4xl font-bold text-center text-red-500 mb-5">About</h2>
+      <p class="text-xl text-center text-gray-300">Experiencing God's Power, Embracing His Love, and Walking in His Grace</p>
+    </div>
+  </section>
+
+<!-- Our Mission & Vision Section -->
+<section id="mission-vision" class="py-10 px-5 bg-white">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 text-black">
+        <h2 class="text-4xl font-bold mb-5">OUR MISSION & VISION</h2>
+      </div>
+      <div class="md:w-1/2 bg-sky-500 p-5 rounded-md text-black">
+        <p class="mb-3">
+          At JCRM, our mission is to lead people into a deeper relationship with Jesus Christ. We are committed to preaching the Gospel with passion, fostering a strong faith-based community, and equipping believers with the Word of God.
+        </p>
+        <p>
+          We envision a world transformed by the power of the Holy Spirit, where people from all walks of life experience the love, grace, and salvation of Jesus Christ. Our desire is to ignite a global revival that touches nations, heals the brokenhearted, and brings people closer to God.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Our Ministries Section -->
+<section id="ministries" class="py-10 px-5 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center text-red-500 mb-5">OUR MINISTRIES</h2>
+      <div class="relative overflow-hidden">
+        <!-- Carousel Container -->
+        <div class="carousel flex space-x-5">
+          <!-- Slide 1 -->
+          <div class="flex-shrink-0 w-full md:w-1/4 bg-sky-500 p-5 rounded-md text-center text-black">
+            <img src="{% static 'images/jcrm-logo.png' %}" alt="Children's Ministry" class="mx-auto mb-3">
+            <h3 class="text-2xl font-bold">Children's Ministry</h3>
+          </div>
+          <!-- Slide 2 -->
+          <div class="flex-shrink-0 w-full md:w-1/4 bg-sky-500 p-5 rounded-md text-center text-black">
+            <img src="{% static 'images/jcrm-logo.png' %}" alt="Youth Ministry" class="mx-auto mb-3">
+            <h3 class="text-2xl font-bold">Youth Ministry</h3>
+          </div>
+          <!-- Slide 3 -->
+          <div class="flex-shrink-0 w-full md:w-1/4 bg-sky-500 p-5 rounded-md text-center text-black">
+            <img src="{% static 'images/jcrm-logo.png' %}" alt="Worship & Creative Arts Ministry" class="mx-auto mb-3">
+            <h3 class="text-2xl font-bold">Worship & Creative Arts Ministry</h3>
+          </div>
+          <!-- Slide 4 -->
+          <div class="flex-shrink-0 w-full md:w-1/4 bg-sky-500 p-5 rounded-md text-center text-black">
+            <img src="{% static 'images/jcrm-logo.png' %}" alt="Evangelism & Missions" class="mx-auto mb-3">
+            <h3 class="text-2xl font-bold">Evangelism & Missions</h3>
+          </div>
+          <!-- Slide 5 -->
+          <div class="flex-shrink-0 w-full md:w-1/4 bg-sky-500 p-5 rounded-md text-center text-black">
+            <img src="{% static 'images/jcrm-logo.png' %}" alt="Evangelism & Missions" class="mx-auto mb-3">
+            <h3 class="text-2xl font-bold">Evangelism & Missions</h3>
+          </div>
+        </div>
+        <!-- Navigation Arrows -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // JavaScript for Carousel Functionality
+    const carousel = document.querySelector('.carousel');
+    const nextButton = document.querySelector('.right-0');
+    const prevButton = document.querySelector('.left-0');
+  
+    nextButton.addEventListener('click', () => {
+      carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+    });
+  
+    prevButton.addEventListener('click', () => {
+      carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- Get Involved Section -->
+<section id="get-involved" class="py-10 px-5 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center text-red-500 mb-5">GET INVOLVED</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Visit Us This Sunday -->
+        <div class="flex flex-col items-center text-center">
+          <img src="{% static 'images/ps.jpg' %}" alt="Visit Us This Sunday" class="w-12 h-12 mb-3">
+          <h3 class="text-2xl font-bold mb-2">Visit Us This Sunday</h3>
+          <p class="text-gray-700">Come and worship with us.</p>
+        </div>
+        <!-- Become a Member -->
+        <div class="flex flex-col items-center text-center">
+          <img src="{% static 'images/ps.jpg' %}" alt="Become a Member" class="w-12 h-12 mb-3">
+          <h3 class="text-2xl font-bold mb-2">Become a Member</h3>
+          <p class="text-gray-700">Grow in faith and community.</p>
+        </div>
+        <!-- Join a Ministry -->
+        <div class="flex flex-col items-center text-center">
+          <img src="{% static 'images/ps.jpg' %}" alt="Join a Ministry" class="w-12 h-12 mb-3">
+          <h3 class="text-2xl font-bold mb-2">Join a Ministry</h3>
+          <p class="text-gray-700">Use your gifts for God's glory!</p>
+        </div>
+        <!-- Give & Support -->
+        <div class="flex flex-col items-center text-center">
+          <img src="{% static 'images/ps.jpg' %}" alt="Give & Support" class="w-12 h-12 mb-3">
+          <h3 class="text-2xl font-bold mb-2">Give & Support</h3>
+          <p class="text-gray-700">Partner with us in advancing God's kingdom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+
+
+
+
+
+
+
+{% endblock %}
         

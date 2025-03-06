@@ -9,55 +9,71 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <footer class="bg-black text-white pt-6">
-        <div class="container mx-auto flex flex-wrap justify-between space-y-8">
-            <!-- Ministry Description -->
-            <div class="w-full md:w-1/4 ">
-                <img src="{% static 'images/jcrm-logo.png' %}" alt="JCRM Logo" class="h-16 mb-4  bg-white">
-                <p>Jesus Come Revival Ministries is a spirit-filled church committed to spreading the gospel and transforming lives.</p>
-            </div>
-            <!-- Quick Links -->
-            <div class="w-full md:w-1/4">
-                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="{% url 'home:home' %}" class="text-white hover:text-red-500">Home</a></li>
-                    <li><a href="{% url 'about:about' %}" class="text-white hover:text-red-500">About Us</a></li>
-                    <li><a href="{% url 'ministries:ministries' %}" class="text-white hover:text-red-500">Ministries</a></li>
-                    <li><a href="{% url 'events:events' %}" class="text-white hover:text-red-500">Events</a></li>
-                    <li><a href="{% url 'contact:contact' %}" class="text-white hover:text-red-500">Contacts</a></li>
-                    <li><a href="#" class="text-white hover:text-red-500">Watch | Read | Listen</a></li>
-                </ul>
-            </div>
-            <!-- Get Involved -->
-            <div class="w-full md:w-1/4">
-                <h3 class="text-lg font-semibold mb-4">Get Involved</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-white hover:text-red-500">Give & Support</a></li>
-                    <li><a href="#" class="text-white hover:text-red-500">Join A Ministry</a></li>
-                    <li><a href="#" class="text-white hover:text-red-500">Prayer Requests</a></li>
-                    <li><a href="#" class="text-white hover:text-red-500">Volunteer Opportunities</a></li>
-                </ul>
-            </div>
-            <!-- Contact & Socials -->
-            <div class="w-full md:w-1/4">
-                <h3 class="text-lg font-semibold mb-4">Contacts & Socials</h3>
-                <ul class="space-y-2">
-                    <li><i class="fas fa-map-marker-alt"></i> Juja, Kiambu, Kenya</li>
-                    <li><i class="fas fa-phone-alt"></i> +254 713 245 67</li>
-                    <li><i class="fas fa-envelope"></i> church@jcrm.org</li>
-                </ul>
-                <div class="flex space-x-4 mt-4">
-                    <a href="https://www.facebook.com/jcrm" class="text-white hover:text-red-500"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/jcrm" class="text-white hover:text-red-500"><i class="fab fa-instagram"></i></a>
-                </div>
+    <!-- FOOTER SECTION -->
+<footer class="bg-black text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Logo & Description -->
+        <div class="flex flex-col items-start">
+            <img src="{% static 'images/jcrm-logo.png' %}" alt="JCRM Logo" class="w-16 h-16">
+            <p class="mt-4 text-sm text-gray-300">
+                Jesus Come Revival Ministries is a spirit-filled church committed to spreading the gospel and transforming lives.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+                <li><a href="" class="hover:text-white">Home</a></li>
+                <li><a href="#" class="hover:text-white">About Us</a></li>
+                <li><a href="#" class="hover:text-white">Ministries</a></li>
+                <li><a href="#" class="hover:text-white">Gems</a></li>
+                <li><a href="#" class="hover:text-white">Contacts</a></li>
+                <li><a href="#" class="hover:text-white">Watch | Read | Listen</a></li>
+            </ul>
+        </div>
+
+        <!-- Get Involved -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Get Involved</h3>
+            <ul class="space-y-2 text-gray-400">
+                <li><a href="#" class="hover:text-white">Give & Support</a></li>
+                <li><a href="#" class="hover:text-white">Join a Ministry</a></li>
+                <li><a href="#" class="hover:text-white">Prayer Requests</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacts & Socials -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Contacts & Socials</h3>
+            <p class="text-gray-400 text-sm">
+                JekSolstice Jair, KPCU Building, Chain 1, 5th Floor, P.O Box 8388-00100, Nairobi, Kenya
+            </p>
+            <p class="text-gray-400 text-sm mt-2">
+                📞 +254 722 945183  
+                ✉️ <a href="mailto:chaos@jcrm.org" class="hover:text-white">chaos@jcrm.org</a>
+            </p>
+
+            <!-- Social Media Links -->
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-        <div class="bg-gray-800 py-4 mt-6">
-            <div class="container mx-auto text-center">
-                <p>© 2015 Jesus Come Revival Ministries. All Rights Reserved | <a href="#" class="hover:text-red-500">Privacy Policy</a> | <a href="#" class="hover:text-red-500">Terms of Use</a> | <a href="#" class="hover:text-red-500">Refund Policy</a></p>
-                <p class="mt-2">Powered by VGC</p>
-            </div>
-        </div>
-    </footer>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="mt-8 text-center text-gray-500 text-sm border-t border-gray-700 pt-4">
+        <p>© 2025 Jesus Come Revival Ministries. All Rights Reserved.</p>
+        <p>
+            <a href="#" class="hover:text-white">Privacy Policy</a> |
+            <a href="#" class="hover:text-white">Terms of Use</a> |
+            <a href="#" class="hover:text-white">Refund Policy</a>
+        </p>
+        <p class="mt-2 text-gray-600">Powered by DDS</p>
+    </div>
+</footer>
+
 </body>
 </html>
