@@ -1,0 +1,45 @@
+__pycache__/
+*.pyc
+*.pyo
+
+
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+*.venv
+Pipfile
+Pipfile.lock
+
+# Django Migrations (if you want to keep only necessary ones)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Database files
+*.sqlite3
+*.db
+
+# Logs
+*.log
+logs/
+*.out
+
+
+# IDE/Editor Config Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MacOS & Linux Junk
+.DS_Store
+Thumbs.db
+
+# Secret Files
+.env
+*.pem
+config/settings/local.py  # If you have environment-based settings
