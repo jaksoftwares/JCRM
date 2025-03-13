@@ -1,23 +1,72 @@
+{% extends 'common/base.html' %} {% block title %}JCRM:Home donat{% endblock %}
+{% load static %} {% block content %}
+<div
+	class="w-full relative bg-center bg-cover"
+	style="
+		background-image: url('{% static 'images/ministries/worshipImg.jpeg' %}');
+		height: 620px;
+	"
+>
+	<p
+		class="absolute left-1/2 transform -translate-x-1/2 text-white text-center uppercase w-full"
+		style="top: 35%"
+	>
+		<span class="block text-6xl font-bold mb-4"
+			>HELP US DO MORE THROUGH GIVING</span
+		>
+		<span class="text-4xl">Transforming Lives Through Faith & Action</span>
+	</p>
+</div>
+<div class="w-full bg-white lg:p-20 gap-6 flex flex-col items-center">
+	<p class="capitalize font-bold text-6xl">Why Donate</p>
+	<p class="text-xl text-center" style="width: 90%">
+		At JCRM we are dedicated to spreading the love of Christ, uplifting
+		communities, and providing hope to those in need. Through our outreach
+		programs, we support the less fortunate by offering food, shelter, and
+		essential resources. We also empower individuals through education,
+		skill-building initiatives, and spiritual guidance, ensuring they have the
+		tools to build a better future. By sharing the Gospel and offering
+		counseling, we bring comfort and strength to those facing life’s challenges.
+	</p>
 
-{% extends 'common/base.html' %}
+	<div
+		class="w-full lg:px-32 lg:py-12 bg-gray-100 rounded-lg shadow-lg lg:mt-16 flex justify-between"
+	>
+		<div class="flex flex-col items-start" style="width: 40%">
+			<h1 class="text-4xl font-semibold lg:mb-4">Help us do more</h1>
+			<p class="lg:mb-12">
+				Your support fuels our efforts and ensures that we can continue to serve
+				those who need it most. Click the Donate Now button to make a difference
+				today.
+			</p>
+			<h1 class="text-4xl font-semibold lg:mb-4 text-transparent bg-clip-text gradient-primary">Purchase an E-book</h1>
+			<p class="mb-4">
+				Each eBook is thoughtfully created to inspire, educate, and deepen your
+				understanding of God’s Word. By buying an eBook, you are not only
+				investing in your spiritual growth but also directly contributing to our
+				outreach efforts.
+			</p>
+			<button class="bg-black text-white py-1 px-2 rounded-3xl font-bold">
+				Learn more
+			</button>
+		</div>
+		<div class="flex flex-col" style="width: 45%">
+			<form method="POST" class="space-y-6 w-full">
+				{% csrf_token %}
+				<div class="flex flex-col gap-2">
+					<label>Select gift frequency</label>
+				</div>
+				<div class="flex flex-col gap-2">
+					<label>Select amount (in kenya shillings)</label>
+				</div>
+				<div class="flex flex-col gap-2">
+					<label>Name</label>
+					<input type="text" name="name" placeholder="Enter your name" class="border border-gray-600 px-2 py-1 focus:border-black rounded-md"/>
+				</div>
 
-{% block title %}JCRM:Home{% endblock %}
-
-{% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <label>Payment Method:</label>
-    <select name="payment_method">
-        <option value="stripe">Stripe</option>
-        <option value="paypal">PayPal</option>
-    </select>
-
-    <div id="stripe-card-element">
-        <input type="text" name="stripeToken" placeholder="Stripe Card Token" required>
-    </div>
-
-    <button type="submit">Donate</button>
-</form>
+				<button type="submit" class="w-full bg-red-500 text-white font-bold py-1 rounded-lg">Donate</button>
+			</form>
+		</div>
+	</div>
+</div>
 {% endblock %}
