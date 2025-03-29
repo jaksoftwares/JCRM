@@ -39,7 +39,11 @@
 				those who need it most. Click the Donate Now button to make a difference
 				today.
 			</p>
-			<h1 class="text-4xl font-semibold lg:mb-4 text-transparent bg-clip-text gradient-primary">Purchase an E-book</h1>
+			<h1
+				class="text-4xl font-semibold lg:mb-4 text-transparent bg-clip-text gradient-primary"
+			>
+				Purchase an E-book
+			</h1>
 			<p class="mb-4">
 				Each eBook is thoughtfully created to inspire, educate, and deepen your
 				understanding of God’s Word. By buying an eBook, you are not only
@@ -53,20 +57,142 @@
 		<div class="flex flex-col" style="width: 45%">
 			<form method="POST" class="space-y-6 w-full">
 				{% csrf_token %}
-				<div class="flex flex-col gap-2">
+				<div class="flex flex-col gap-2 justify-start items-start">
 					<label>Select gift frequency</label>
+					<div
+						class="flex justify-center bg-blue-500 p-1 rounded-full w-fit mr-auto"
+					>
+						<button
+							type="button"
+							id="monthlyBtn"
+							class="px-4 py-2 rounded-full bg-blue-400 text-white font-bold transition duration-200"
+						>
+							Monthly
+						</button>
+						<button
+							type="button"
+							id="oneTimeBtn"
+							class="px-4 py-2 rounded-full text-white transition duration-200"
+						>
+							One Time
+						</button>
+					</div>
+
+					<!-- Hidden input to track selected value -->
+					<input
+						type="hidden"
+						name="gift_frequency"
+						id="giftFrequencyInput"
+						value="monthly"
+					/>
 				</div>
 				<div class="flex flex-col gap-2">
 					<label>Select amount (in kenya shillings)</label>
+					<div class="flex gap-2">
+						<button
+							type="button"
+							class="px-4 py-2 rounded-full text-white bg-red-500 focus:outline-none amount-btn"
+							data-value="500"
+						>
+							Ksh. 500
+						</button>
+						<button
+							type="button"
+							class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
+							data-value="1000"
+						>
+							Ksh. 1000
+						</button>
+						<button
+							type="button"
+							class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
+							data-value="5000"
+						>
+							Ksh. 5000
+						</button>
+						<button
+							type="button"
+							class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
+							data-value="other"
+						>
+							Other
+						</button>
+						<input type="hidden" name="amount" id="amountInput" value="500" />
+					</div>
 				</div>
 				<div class="flex flex-col gap-2">
 					<label>Name</label>
-					<input type="text" name="name" placeholder="Enter your name" class="border border-gray-600 px-2 py-1 focus:border-black rounded-md"/>
+					<input
+						type="text"
+						name="name"
+						placeholder="Enter your name"
+						class="border border-gray-600 px-2 py-1 focus:border-black rounded-md"
+					/>
 				</div>
 
-				<button type="submit" class="w-full bg-red-500 text-white font-bold py-1 rounded-lg">Donate</button>
+				<button
+					type="submit"
+					class="w-full bg-red-500 text-white font-bold py-1 rounded-lg"
+				>
+					Donate
+				</button>
 			</form>
 		</div>
 	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			/*** Gift Frequency Selection ***/
+			const monthlyBtn = document.getElementById("monthlyBtn");
+			const oneTimeBtn = document.getElementById("oneTimeBtn");
+			const giftFrequencyInput = document.getElementById("giftFrequencyInput");
+
+			function updateGiftSelection(selected, other) {
+				selected.classList.add("bg-blue-400", "font-bold");
+
+				other.classList.remove("bg-blue-400", "font-bold");
+			}
+
+			monthlyBtn.addEventListener("click", function () {
+				updateGiftSelection(monthlyBtn, oneTimeBtn);
+				giftFrequencyInput.value = "monthly";
+			});
+
+			oneTimeBtn.addEventListener("click", function () {
+				updateGiftSelection(oneTimeBtn, monthlyBtn);
+				giftFrequencyInput.value = "one_time";
+			});
+
+			/*** Amount Selection ***/
+			const amountButtons = document.querySelectorAll(".amount-btn");
+			const amountInput = document.getElementById("amountInput");
+
+			amountButtons.forEach((button) => {
+				button.addEventListener("click", function () {
+					// Reset all buttons to default blue border style
+					amountButtons.forEach((btn) => {
+						btn.classList.remove("bg-red-500", "text-white");
+						btn.classList.add(
+							"text-blue-500",
+							"border",
+							"border-blue-500",
+							"bg-white"
+						);
+					});
+
+					// Apply active styling to selected button
+					this.classList.remove(
+						"text-blue-500",
+						"border",
+						"border-blue-500",
+						"bg-white"
+					);
+					this.classList.add("bg-red-500", "text-white");
+
+					// Update hidden input value
+					amountInput.value = this.getAttribute("data-value");
+				});
+			});
+		});
+	</script>
 </div>
 {% endblock %}
