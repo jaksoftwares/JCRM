@@ -828,3 +828,6 @@ video {
 .gradient-primary {
 	background-image: linear-gradient(to right, #0ba8fc 0%, #c00202 50%);
 }
+.rotate-upward {
+  transform: rotate(-45deg);
+}

@@ -3,35 +3,42 @@
 {% block title %}Home | JCRM{% endblock %}
 
 {% load static %}
+<style>
+
+.rotated-arrow {
+    display: inline-block;
+    transform: rotate(-45deg);
+}
+</style>
 
 {% block content %}
-<section class="relative w-full flex flex-col justify-center items-center text-center text-white" style="height: 75vh;">
+<section class="relative w-full flex flex-col justify-center items-center text-center text-white px-4 sm:px-6" style="height: 75vh;">
     <!-- Background Image -->
     <div class="absolute inset-0 -z-10">
         <img src="{% static 'images/jcrm-home.png' %}" alt="Hero Background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-0"></div>
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 px-6">
-        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+    <div class="relative z-10 px-4 sm:px-6">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
             BRINGING JESUS TO <br> <span class="text-sky-400">EVERY HOME</span>
         </h1>
+    </div>
 
-        <!-- CTA Buttons -->
-        <div class="mt-6 flex space-x-4">
-            <!-- Watch Our Latest Sermons Button -->
-            <a href="#" class="w-64 h-14 flex items-center justify-center bg-red-600 text-white text-lg font-semibold rounded-full shadow-md hover:bg-red-700 transition">
-                Watch Our Latest Sermons
-                <i class="fas fa-arrow-right ml-2 rotate-[315deg]"></i>
-            </a>
+    <!-- CTA Buttons -->
+    <div class="absolute bottom-16 right-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center sm:items-end w-full sm:w-auto px-4 sm:px-0">
+        <!-- Watch Our Latest Sermons Button -->
+        <a href="#" class="w-48 sm:w-64 h-12 sm:h-14 flex items-center justify-center bg-red-600 text-white text-lg font-semibold rounded-full shadow-md hover:bg-red-700 transition text-center pt-1">
+            Watch Our <br class="hidden sm:inline"/> Latest Sermons
+            <i class="fas fa-arrow-right ml-2 rotate-upward"></i>
+        </a>
 
-            <!-- Get Involved Button -->
-            <a href="#" class="w-64 h-14 flex items-center justify-center border border-white text-white text-lg font-semibold rounded-full shadow-md hover:bg-white hover:text-black transition">
-                Get Involved
-                <i class="fas fa-arrow-right ml-2 rotate-[315deg]"></i>
-            </a>
-        </div>
+        <!-- Get Involved Button -->
+        <a href="#" class="w-48 sm:w-64 h-12 sm:h-14 flex items-center justify-center border border-white text-white text-lg font-semibold rounded-full shadow-md hover:bg-white hover:text-black transition text-center">
+            Get <br class="hidden sm:inline"/> Involved
+            <i class="fas fa-arrow-right ml-2 rotate-upward"></i>
+        </a>
     </div>
 </section>
 
@@ -70,19 +77,6 @@
                 </div>
             </template>
         </div>
-    
-        <!-- Navigation Buttons -->
-        <div class="absolute inset-0 flex items-center justify-between p-4">
-            <button @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length"
-                class="p-2 bg-gray-900 bg-opacity-50 text-white rounded-full">
-                ←
-            </button>
-            <button @click="activeSlide = (activeSlide + 1) % slides.length"
-                class="p-2 bg-gray-900 bg-opacity-50 text-white rounded-full">
-                →
-            </button>
-        </div>
-    
         <!-- Dots Indicator -->
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
             <template x-for="(slide, index) in slides" :key="index">
@@ -94,25 +88,9 @@
         </div>
     </div>
 
-    <!-- Image Carousel -->
-    <!-- <div class="relative max-w-4xl mx-auto mt-6 h-[200px]">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="{% static 'images/image1.png' %}" class="w-full max-h-[200px] object-contain rounded-lg shadow-lg">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/image2.png' %}" class="w-full max-h-[200px] object-contain rounded-lg shadow-lg">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/image3.png' %}" class="w-full max-h-[200px] object-contain rounded-lg shadow-lg">
-                </div>
-            </div>
-            <!-- Navigation Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+   
         </div>
-    </div> -->
+    </div>
 </section>
 
 
@@ -136,33 +114,7 @@
 </script>
 
 
-<!-- OUR SERVICES SECTION -->
-<!-- <section class="py-16 bg-gray-100 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">OUR SERVICES</h2> -->
 
-    <!-- <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-6"> -->
-        <!-- Service Card 1 -->
-        <!-- <div class="p-6 border-2 border-sky-400 rounded-xl shadow-lg bg-white relative">
-            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-400 to-transparent rounded-t-xl"></div>
-            <h3 class="text-xl font-semibold text-gray-900">Sunday Service</h3>
-            <p class="text-gray-600 mt-2">Sundays 9:00 AM - 11:00 AM</p>
-        </div> -->
-
-        <!-- Service Card 2 -->
-        <!-- <div class="p-6 border-2 border-sky-400 rounded-xl shadow-lg bg-white relative">
-            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-400 to-transparent rounded-t-xl"></div>
-            <h3 class="text-xl font-semibold text-gray-900">Midweek Prayers</h3>
-            <p class="text-gray-600 mt-2">Wednesdays 6:00 PM</p>
-        </div> -->
-
-        <!-- Service Card 3 -->
-        <!-- <div class="p-6 border-2 border-sky-400 rounded-xl shadow-lg bg-white relative">
-            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-400 to-transparent rounded-t-xl"></div>
-            <h3 class="text-xl font-semibold text-gray-900">Bible Study</h3>
-            <p class="text-gray-600 mt-2">Fridays 7:00 PM</p>
-        </div>
-    </div>
-</section> -->
 
 
 <section class="py-16 bg-gray-100">

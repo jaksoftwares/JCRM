@@ -33,4 +33,3 @@ def home_page2(request):
         'ministries': ministries,
     }
     return render(request, 'home/index2.html', context)
-
