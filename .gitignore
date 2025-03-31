@@ -43,3 +43,28 @@ Thumbs.db
 .env
 *.pem
 config/settings/local.py  # If you have environment-based settings
+# Django & Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+.env
+*.log
+.DS_Store
+*.swp
+*.swo
+*.idea/
+*.vscode/
+*.egg-info/
+migrations/**/__pycache__/
+
+# Virtual environments
+venv/
+env/
+
+# Media & Static files
+media/
+staticfiles/
+
