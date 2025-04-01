@@ -1,198 +1,196 @@
-{% extends 'common/base.html' %} {% block title %}JCRM:Home donat{% endblock %}
-{% load static %} {% block content %}
+{% extends 'common/base.html' %}
+{% block title %}JCRM:Home donat{% endblock %}
+{% load static %}
+{% block content %}
 <div
-	class="w-full relative bg-center bg-cover"
-	style="
-		background-image: url('{% static 'images/donate/background.png' %}');
-		height: 620px;
-	"
+  class="w-full relative bg-center bg-cover"
+  style="background-image: url('{% static 'images/donate/background.png' %}'); height: 620px;"
 >
-	<p
-		class="absolute left-1/2 transform -translate-x-1/2 text-white text-center uppercase w-full"
-		style="top: 35%"
-	>
-		<span class="block text-6xl font-bold mb-4"
-			>HELP US DO MORE THROUGH GIVING</span
-		>
-		<span class="text-4xl">Transforming Lives Through Faith & Action</span>
-	</p>
+  <p
+    class="absolute left-1/2 transform -translate-x-1/2 text-white text-center uppercase w-full"
+    style="top: 35%"
+  >
+    <span class="block text-6xl font-bold mb-4">HELP US DO MORE THROUGH GIVING</span>
+    <span class="text-4xl">Transforming Lives Through Faith & Action</span>
+  </p>
 </div>
-<div class="w-full bg-white lg:p-20 gap-6 flex flex-col items-center">
-	<p class="capitalize font-bold text-6xl">Why Donate</p>
-	<p class="text-xl text-center" style="width: 90%">
-		At JCRM we are dedicated to spreading the love of Christ, uplifting
-		communities, and providing hope to those in need. Through our outreach
-		programs, we support the less fortunate by offering food, shelter, and
-		essential resources. We also empower individuals through education,
-		skill-building initiatives, and spiritual guidance, ensuring they have the
-		tools to build a better future. By sharing the Gospel and offering
-		counseling, we bring comfort and strength to those facing life’s challenges.
-	</p>
 
-	<div
-		class="w-full lg:px-32 lg:py-12 bg-gray-100 rounded-lg shadow-lg lg:mt-16 flex justify-between"
-	>
-		<div class="flex flex-col items-start" style="width: 40%">
-			<h1 class="text-4xl font-semibold lg:mb-4">Help us do more</h1>
-			<p class="lg:mb-12">
-				Your support fuels our efforts and ensures that we can continue to serve
-				those who need it most. Click the Donate Now button to make a difference
-				today.
-			</p>
-			<h1
-				class="text-4xl font-semibold lg:mb-4 text-transparent bg-clip-text gradient-primary"
-			>
-				Purchase an E-book
-			</h1>
-			<p class="mb-4">
-				Each eBook is thoughtfully created to inspire, educate, and deepen your
-				understanding of God’s Word. By buying an eBook, you are not only
-				investing in your spiritual growth but also directly contributing to our
-				outreach efforts.
-			</p>
-			<button class="bg-black text-white py-1 px-2 rounded-3xl font-bold">
-				Learn more
-			</button>
-		</div>
-		<div class="flex flex-col" style="width: 45%">
-			<form method="POST" class="space-y-6 w-full">
-				{% csrf_token %}
-				<div class="flex flex-col gap-2 justify-start items-start">
-					<label>Select gift frequency</label>
-					<div
-						class="flex justify-center bg-blue-500 p-1 rounded-full w-fit mr-auto"
-					>
-						<button
-							type="button"
-							id="monthlyBtn"
-							class="px-4 py-2 rounded-full bg-blue-400 text-white font-bold transition duration-200"
-						>
-							Monthly
-						</button>
-						<button
-							type="button"
-							id="oneTimeBtn"
-							class="px-4 py-2 rounded-full text-white transition duration-200"
-						>
-							One Time
-						</button>
-					</div>
+<div class="w-full bg-white lg:p-20 sm:p-10 gap-6 flex flex-col items-center">
+  <p class="capitalize font-bold text-6xl text-center sm:text-4xl">Why Donate</p>
+  <p class="text-xl text-center sm:w-full sm:text-lg">
+    At JCRM we are dedicated to spreading the love of Christ, uplifting
+    communities, and providing hope to those in need. Through our outreach
+    programs, we support the less fortunate by offering food, shelter, and
+    essential resources. We also empower individuals through education,
+    skill-building initiatives, and spiritual guidance, ensuring they have the
+    tools to build a better future. By sharing the Gospel and offering
+    counseling, we bring comfort and strength to those facing life’s challenges.
+  </p>
 
-					<!-- Hidden input to track selected value -->
-					<input
-						type="hidden"
-						name="gift_frequency"
-						id="giftFrequencyInput"
-						value="monthly"
-					/>
-				</div>
-				<div class="flex flex-col gap-2">
-					<label>Select amount (in kenya shillings)</label>
-					<div class="flex gap-2">
-						<button
-							type="button"
-							class="px-4 py-2 rounded-full text-white bg-red-500 focus:outline-none amount-btn"
-							data-value="500"
-						>
-							Ksh. 500
-						</button>
-						<button
-							type="button"
-							class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
-							data-value="1000"
-						>
-							Ksh. 1000
-						</button>
-						<button
-							type="button"
-							class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
-							data-value="5000"
-						>
-							Ksh. 5000
-						</button>
-						<button
-							type="button"
-							class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
-							data-value="other"
-						>
-							Other
-						</button>
-						<input type="hidden" name="amount" id="amountInput" value="500" />
-					</div>
-				</div>
-				<div class="flex flex-col gap-2">
-					<label>Name</label>
-					<input
-						type="text"
-						name="name"
-						placeholder="Enter your name"
-						class="border border-gray-600 px-2 py-1 focus:border-black rounded-md"
-					/>
-				</div>
+  <div
+    class="w-full lg:px-32 sm:px-6 lg:py-12 bg-gray-100 rounded-lg shadow-lg lg:mt-16 flex flex-col lg:flex-row justify-between"
+  >
+    <div class="flex flex-col items-start w-full lg:w-2/5">
+      <h1 class="text-4xl font-semibold lg:mb-4">Help us do more</h1>
+      <p class="lg:mb-12">
+        Your support fuels our efforts and ensures that we can continue to serve
+        those who need it most. Click the Donate Now button to make a difference
+        today.
+      </p>
+      <h1 class="text-4xl font-semibold lg:mb-4 text-transparent bg-clip-text gradient-primary">
+        Purchase an E-book
+      </h1>
+      <p class="mb-4">
+        Each eBook is thoughtfully created to inspire, educate, and deepen your
+        understanding of God’s Word. By buying an eBook, you are not only
+        investing in your spiritual growth but also directly contributing to our
+        outreach efforts.
+      </p>
+      <button class="bg-black text-white py-1 px-2 rounded-3xl font-bold">
+        Learn more
+      </button>
+    </div>
 
-				<button
-					type="submit"
-					class="w-full bg-red-500 text-white font-bold py-1 rounded-lg"
-				>
-					Donate
-				</button>
-			</form>
-		</div>
-	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			/*** Gift Frequency Selection ***/
-			const monthlyBtn = document.getElementById("monthlyBtn");
-			const oneTimeBtn = document.getElementById("oneTimeBtn");
-			const giftFrequencyInput = document.getElementById("giftFrequencyInput");
+    <div class="flex flex-col w-full lg:w-2/5 mt-8 lg:mt-0">
+      <form method="POST" class="space-y-6 w-full">
+        {% csrf_token %}
+        <div class="flex flex-col gap-2 justify-start items-start">
+          <label>Select gift frequency</label>
+          <div class="flex justify-center bg-blue-500 p-1 rounded-full w-fit mr-auto">
+            <button
+              type="button"
+              id="monthlyBtn"
+              class="px-4 py-2 rounded-full bg-blue-400 text-white font-bold transition duration-200"
+            >
+              Monthly
+            </button>
+            <button
+              type="button"
+              id="oneTimeBtn"
+              class="px-4 py-2 rounded-full text-white transition duration-200"
+            >
+              One Time
+            </button>
+          </div>
 
-			function updateGiftSelection(selected, other) {
-				selected.classList.add("bg-blue-400", "font-bold");
+          <!-- Hidden input to track selected value -->
+          <input
+            type="hidden"
+            name="gift_frequency"
+            id="giftFrequencyInput"
+            value="monthly"
+          />
+        </div>
 
-				other.classList.remove("bg-blue-400", "font-bold");
-			}
+        <div class="flex flex-col gap-2">
+          <label>Select amount (in kenya shillings)</label>
+          <div class="flex flex-wrap gap-2">
+            <button
+              type="button"
+              class="px-4 py-2 rounded-full text-white bg-red-500 focus:outline-none amount-btn"
+              data-value="500"
+            >
+              Ksh. 500
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
+              data-value="1000"
+            >
+              Ksh. 1000
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
+              data-value="5000"
+            >
+              Ksh. 5000
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 rounded-full text-blue-500 border border-blue-500 bg-white focus:outline-none amount-btn"
+              data-value="other"
+            >
+              Other
+            </button>
+            <input type="hidden" name="amount" id="amountInput" value="500" />
+          </div>
+        </div>
 
-			monthlyBtn.addEventListener("click", function () {
-				updateGiftSelection(monthlyBtn, oneTimeBtn);
-				giftFrequencyInput.value = "monthly";
-			});
+        <div class="flex flex-col gap-2">
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            class="border border-gray-600 px-2 py-1 focus:border-black rounded-md"
+          />
+        </div>
 
-			oneTimeBtn.addEventListener("click", function () {
-				updateGiftSelection(oneTimeBtn, monthlyBtn);
-				giftFrequencyInput.value = "one_time";
-			});
+        <button
+          type="submit"
+          class="w-full bg-red-500 text-white font-bold py-1 rounded-lg"
+        >
+          Donate
+        </button>
+      </form>
+    </div>
+  </div>
 
-			/*** Amount Selection ***/
-			const amountButtons = document.querySelectorAll(".amount-btn");
-			const amountInput = document.getElementById("amountInput");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      /*** Gift Frequency Selection ***/
+      const monthlyBtn = document.getElementById("monthlyBtn");
+      const oneTimeBtn = document.getElementById("oneTimeBtn");
+      const giftFrequencyInput = document.getElementById("giftFrequencyInput");
 
-			amountButtons.forEach((button) => {
-				button.addEventListener("click", function () {
-					// Reset all buttons to default blue border style
-					amountButtons.forEach((btn) => {
-						btn.classList.remove("bg-red-500", "text-white");
-						btn.classList.add(
-							"text-blue-500",
-							"border",
-							"border-blue-500",
-							"bg-white"
-						);
-					});
+      function updateGiftSelection(selected, other) {
+        selected.classList.add("bg-blue-400", "font-bold");
 
-					// Apply active styling to selected button
-					this.classList.remove(
-						"text-blue-500",
-						"border",
-						"border-blue-500",
-						"bg-white"
-					);
-					this.classList.add("bg-red-500", "text-white");
+        other.classList.remove("bg-blue-400", "font-bold");
+      }
 
-					// Update hidden input value
-					amountInput.value = this.getAttribute("data-value");
-				});
-			});
-		});
-	</script>
+      monthlyBtn.addEventListener("click", function () {
+        updateGiftSelection(monthlyBtn, oneTimeBtn);
+        giftFrequencyInput.value = "monthly";
+      });
+
+      oneTimeBtn.addEventListener("click", function () {
+        updateGiftSelection(oneTimeBtn, monthlyBtn);
+        giftFrequencyInput.value = "one_time";
+      });
+
+      /*** Amount Selection ***/
+      const amountButtons = document.querySelectorAll(".amount-btn");
+      const amountInput = document.getElementById("amountInput");
+
+      amountButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Reset all buttons to default blue border style
+          amountButtons.forEach((btn) => {
+            btn.classList.remove("bg-red-500", "text-white");
+            btn.classList.add(
+              "text-blue-500",
+              "border",
+              "border-blue-500",
+              "bg-white"
+            );
+          });
+
+          // Apply active styling to selected button
+          this.classList.remove(
+            "text-blue-500",
+            "border",
+            "border-blue-500",
+            "bg-white"
+          );
+          this.classList.add("bg-red-500", "text-white");
+
+          // Update hidden input value
+          amountInput.value = this.getAttribute("data-value");
+        });
+      });
+    });
+  </script>
 </div>
 {% endblock %}

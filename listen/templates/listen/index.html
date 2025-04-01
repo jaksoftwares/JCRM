@@ -3,92 +3,71 @@
 {% load static %}
 {% block content %}
 
-<section class="relative rounded-lg overflow-hidden mx-8 my-8">
-    <div class="flex flex-col md:flex-row rounded-lg overflow-hidden items-center mt-10 mx-8">
+<section class="relative rounded-lg overflow-hidden mx-4 md:mx-16 lg:mx-32 xl:mx-40 my-8">
+    <div class="flex flex-col md:flex-row items-center md:items-start mt-10 w-full">
         <!-- Left content section -->
-        <div class="md:w-1/2 p-10">
-          <h1 class="text-6xl font-bold mb-6">FAITH BY HEARING</h1>
-          <h2 class="text-3xl mb-8"><span class="text-blue-500">Listen & Be </span> <span class="text-red-500">Transformed</span></h2>
-            Deepen your faith with powerful sermons,
-            inspiring devotionals,
-            and uplifting worship content—all accessible anytime,
-            anywhere. Whether you're looking to watch an impactful sermon,
-            read an insightful devotional,
-            or listen to spirit-filled worship,
-            JCRM has you covered.
-          </p>
+        <div class="w-full md:w-1/2 p-6 md:p-10 text-center md:text-left">
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6">FAITH BY HEARING</h1>
+            <h2 class="text-xl md:text-3xl mb-4 md:mb-8">
+                <span class="text-blue-500">Listen & Be</span>  
+                <span class="text-red-500">Transformed</span>
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+                Deepen your faith with powerful sermons, inspiring devotionals,
+                and uplifting worship content—all accessible anytime, anywhere.
+                Whether you're looking to watch an impactful sermon, read an 
+                insightful devotional, or listen to spirit-filled worship,
+                JCRM has you covered.
+            </p>
         </div>
 
         <!-- Right image section -->
-        <div class="md:w-3/4 h-full">
-            <img
-              src="{% static 'images/Rectangle 52.png' %}"
-              alt="Worship Background"
-              class="w-full h-full object-cover"
-            />
+        <div class="w-full md:w-3/4">
+            <img src="{% static 'images/Rectangle 52.png' %}" alt="Worship Background" class="w-full h-auto rounded-lg"/>
         </div>
-
     </div>
 
-
-<div class="mx-40">
-  <!-- Search and filter -->
-<div class="max-w-6xl mx-auto my-4 flex  space-x-4 px-4 pt-8">
-
-    <div class="relative w-2/3">
-      <input type="text" placeholder="Search" class="pl-8 pr-10 py-2 border rounded-full bg-gray-200 w-full">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-2 top-2.5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-
-      <img
-        src="{% static 'images/Slider.png' %}"
-        alt="filter"
-        class="w-5 h-5 absolute right-2 top-2.5"
-      />
-    </div>
-
-    <!-- Cancel button -->
-    <button class="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-xl">Cancel</button>
-
-    <!-- Reset Filters button -->
-    <button class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 rounded-xl">
-      <img
-        src="{% static 'images/Rotate.png' %}"
-        alt="reset"
-        class="w-5 h-5"
-      />
-      <span>Reset Filters</span>
-    </button>
-
-  </div>
-
-
-  <!-- Resources grid -->
-<div class="max-w-6xl mx-auto my-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {% for i in "123456789" %}
-      <div class="flex flex-col">
-        <div class="relative overflow-hidden rounded-lg shadow-md">
-          <img src="{% static 'images/sermon-thumbnail.jpg' %}" alt="Building Strong Families" class="w-full h-48 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
-            <h3 class="text-xl font-bold text-white">BUILDING STRONG FAMILIES</h3>
-          </div>
+    <div class="mx-4 md:mx-16 lg:mx-32 xl:mx-40">
+        <!-- Search and filter -->
+        <div class="max-w-7xl mx-auto my-4 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 px-4 pt-8 items-center">
+            <div class="relative w-full md:w-2/3">
+                <input type="text" placeholder="Search" class="pl-8 pr-10 py-2 border rounded-full bg-gray-200 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-2 top-2.5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+            <button class="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-xl">Cancel</button>
+            <button class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 rounded-xl">
+                <img src="{% static 'images/Rotate.png' %}" alt="reset" class="w-5 h-5"/>
+                <span>Reset Filters</span>
+            </button>
         </div>
-        <div class="mt-2">
-          <p class="text-center text-gray-800 font-medium">The Beatitudes</p>
+
+        <!-- Resources grid -->
+        <div class="max-w-7xl mx-auto my-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {% for i in "123456789" %}
+                <div class="flex flex-col">
+                    <div class="relative overflow-hidden rounded-lg shadow-md">
+                        <img src="{% static 'images/sermon-thumbnail.jpg' %}" alt="Building Strong Families" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+                            <h3 class="text-xl font-bold text-white">BUILDING STRONG FAMILIES</h3>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <p class="text-center text-gray-800 font-medium">The Beatitudes</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-      </div>
-      {% endfor %}
+
+        <!-- View More button -->
+        <div class="flex justify-center mt-8">
+            <button class="px-6 py-2 bg-black text-white rounded-full">View More</button>
+        </div>
     </div>
-
-      <!-- View More button -->
-  <div class="flex justify-center mt-8">
-    <button class="px-6 py-2 bg-black text-white rounded-full">View More</button>
-  </div>
-</div>
-
-</div>
 
 </section>
+
 {% endblock %}
