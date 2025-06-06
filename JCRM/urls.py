@@ -22,6 +22,7 @@ urlpatterns = [
     path('donations/', include('donations.urls', namespace='donations')),
     path('dashboard/', include('dashboard.urls', namespace='dashboard')),
     path('resources/', include('resources.urls', namespace='resources')),
+     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

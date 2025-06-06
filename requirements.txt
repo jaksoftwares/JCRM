@@ -4,6 +4,7 @@ cffi==1.17.1
 charset-normalizer==3.4.1
 cryptography==44.0.1
 Django==5.1.6
+django-browser-reload==1.18.0
 idna==3.10
 paypal-checkout-serversdk==1.0.3
 paypalhttp==1.0.1
